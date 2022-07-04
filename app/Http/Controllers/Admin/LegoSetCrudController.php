@@ -102,8 +102,9 @@ class LegoSetCrudController extends CrudController
 
         //$this->crud->addButtonFromModelFunction('line', 'economyButton', 'getEconomyButton', 'first');
         //$this->crud->addButtonFromModelFunction('line', 'brickLinkButton', 'getBrickLinkUrl', 'first');
-        $this->crud->addButtonFromModelFunction('line', 'externalLink', 'getExternalLinkAsButton', 'end');
+        //$this->crud->addButtonFromModelFunction('line', 'externalLink', 'getExternalLinkAsButton', 'end');
         $this->crud->addButtonFromModelFunction('line', 'promoklockiLink', 'getPromoklockiButton', 'end');
+        $this->crud->addButtonFromModelFunction('line', 'instructionsLink', 'getInstructionsLink', 'end');
 
         //$this->crud->set('rebrickableService', $this->rebrickableService);
         $this->crud->removeButton('show');

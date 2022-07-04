@@ -102,6 +102,12 @@ class LegoSet extends Model implements LegoSetInterface
             </a>';
     }
 
+    public function getInstructionsLink()
+    {
+        //
+        return '<a class="btn btn-sm btn-link" target="_blank" href="https://www.lego.com/en-us/service/buildinginstructions/search?q='.$this->getSetNumber().'" data-toggle="tooltip" title="External link."><i class="fa fa-paperclip"></i> Instructions</a>';
+    }
+
     public function recalculatePrice(CrudPanel $crudPanel)
     {
         $rebrickableService = $crudPanel->setting('rebrickableService');
