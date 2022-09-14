@@ -82,15 +82,14 @@ class LegoSetCrudController extends CrudController
             'width' => "5rem",
             'radius' => "10px"
         ]);
-        $this->crud->column('setNumber')->label('Set #');
-        CRUD::column('name');
-        CRUD::column('theme');
+        $this->crud->column('setNumber')->label('Set #')->type('setPromoLink');
+        CRUD::column('nameCombinedTheme')->label('Name & Theme')->type('nameTheme');
         CRUD::column('year');
         CRUD::column('parts');
         CRUD::column('price')->type('price');
         CRUD::column('boughtPrice')->label('Bought for')->type('boughtPrice');
-        CRUD::column('marketshare')->label("Market")->type('market');
-        CRUD::column('pricediff')->label("Price Diff")->type('price-difference');
+        // stopped working
+        //CRUD::column('marketshare')->label("Market")->type('market');
 
 
         /** @var LegoSet $model */
@@ -103,7 +102,6 @@ class LegoSetCrudController extends CrudController
         //$this->crud->addButtonFromModelFunction('line', 'economyButton', 'getEconomyButton', 'first');
         //$this->crud->addButtonFromModelFunction('line', 'brickLinkButton', 'getBrickLinkUrl', 'first');
         //$this->crud->addButtonFromModelFunction('line', 'externalLink', 'getExternalLinkAsButton', 'end');
-        $this->crud->addButtonFromModelFunction('line', 'promoklockiLink', 'getPromoklockiButton', 'end');
         $this->crud->addButtonFromModelFunction('line', 'instructionsLink', 'getInstructionsLink', 'end');
 
         //$this->crud->set('rebrickableService', $this->rebrickableService);

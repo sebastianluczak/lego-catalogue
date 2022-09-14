@@ -40,7 +40,7 @@ class RebrickableService
 
         $crawler = $client->request('GET', $uri);
         $prices = [];
-        // Click on the "Security Advisories" link
+
         $crawler->filter('.bprice')
             ->each(function (Crawler $node) use ($legoSetView, &$prices) {
                 Log::notice("Found " . $node->nodeName() . ' with text: ' . $node->text());

@@ -35,7 +35,9 @@ class LegoSet extends Model implements LegoSetInterface
     */
     public function getExternalLinkAsButton()
     {
-        return '<a class="btn btn-sm btn-link" target="_blank" href="'.$this->getExternalLink().'" data-toggle="tooltip" title="External link."><i class="fa fa-search"></i> BrickSet</a>';
+        return '<a class="btn btn-sm btn-link" target="_blank" href="'.$this->getExternalLink().'" data-toggle="tooltip" title="External link.">
+            <i class="fa fa-search"></i> BrickSet
+        </a>';
     }
 
     public function getEconomyButton()
@@ -69,7 +71,7 @@ class LegoSet extends Model implements LegoSetInterface
         }
 
         return '<a href="#" class="btn btn-secondary" data-style="zoom-in">
-                    <span class="ladda-label"><i class="la la-calculator"></i> All parts: '.$count.'</span>
+                    <span class="ladda-label">🧩 '.$count.'</span>
                 </a>';
     }
 
@@ -81,7 +83,7 @@ class LegoSet extends Model implements LegoSetInterface
             $price = LegoSet::where('boughtPrice', '>', 0)->sum('price');
         }
         return '<a href="#" class="btn btn-success" data-style="zoom-in">
-                    <span class="ladda-label"><i class="la la-dollar-sign"></i> Estimated Value: '.$price.',00 zł</span>
+                    <span class="ladda-label">💸 '.$price.',00 zł</span>
                 </a>';
     }
 
@@ -98,7 +100,7 @@ class LegoSet extends Model implements LegoSetInterface
             $price = LegoSet::where('boughtPrice', '>', 0)->sum('price');
         }
         return '<a href="#" class="btn btn-success" data-style="zoom-in">
-                    <span class="ladda-label"><i class="la la-dollar-sign"></i> Estimated Value: '.$price / $count.'</span>
+                    <span class="ladda-label">🪙 '. number_format($price / $count, 2).' zł/szt.</span>
             </a>';
     }
 
