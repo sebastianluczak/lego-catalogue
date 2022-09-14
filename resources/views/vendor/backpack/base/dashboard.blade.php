@@ -15,21 +15,4 @@
 
 @section('content')
 
-    <div class="row">
-        @include('dashboard.diskWidgets')
-        @include('dashboard.componentTemperatures')
-    </div>
-
-    <div class="row">
-        @include('dashboard.weatherGraph')
-        @include('dashboard.currentWeather')
-    </div>
-
-    <div class="row">
-        @include('dashboard.weatherCards')
-    </div>
-
-    <div class="row">
-        @include('dashboard.torrentsList')
-    </div>
 @endsection
